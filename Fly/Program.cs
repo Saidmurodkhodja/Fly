@@ -27,7 +27,7 @@ namespace Fly
             airplane.FlyTo(new Coordinate { X = 500, Y = 500, Z = 500 }); // Flying to random place
 
             Drone drone = new Drone(initialPosition, 1000, 10); // according to task drone can not exceed 1000 km
-            drone.FlyTo(new Coordinate { X = 1000, Y = 1000, Z = 1000 });
+            drone.FlyTo(new Coordinate { X = 200, Y = 200, Z = 200 });
         }
     }
 }

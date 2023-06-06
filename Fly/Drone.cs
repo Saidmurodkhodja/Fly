@@ -76,6 +76,7 @@ namespace Fly
 
             return flyTime;
         }
+        // Calculate the Euclidean distance between two points in 3D space
 
         private double CalculateDistance(Coordinate from, Coordinate to)
         {
