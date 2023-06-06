@@ -26,7 +26,7 @@ namespace Fly
             double distance = CalculateDistance(CurrentPosition, newPosition);
 
             // Check if distance is within drone's maximum range
-            if (distance > maxDistance)
+            if (distance > maxDistance || distance > 1000)
             {
                 Console.WriteLine("The drone cannot fly that far.");
                 return;
@@ -34,7 +34,7 @@ namespace Fly
 
             double flyTime = CalculateFlyTime(distance);
             Console.WriteLine($"Flying to new position of a drone: {newPosition.X}, {newPosition.Y}, {newPosition.Z}");
-            Console.WriteLine($"Estimated fly time: {Math.Round(flyTime, 2)} minutes");
+            Console.WriteLine($"Estimated fly time of a drone: {Math.Ceiling(flyTime)} minutes");
             CurrentPosition = newPosition;
         }
 
@@ -43,7 +43,7 @@ namespace Fly
             double distance = CalculateDistance(CurrentPosition, newPosition);
 
             // Check if distance is within drone's maximum range
-            if (distance > maxDistance)
+            if (distance > maxDistance || distance > 1000)
             {
                 Console.WriteLine("The drone cannot fly that far.");
                 return 0;
@@ -77,15 +77,13 @@ namespace Fly
             return flyTime;
         }
 
-        // Calculate the Euclidean distance between two points in 3D space
-        private double CalculateDistance(Coordinate from, Coordinate to) 
+        private double CalculateDistance(Coordinate from, Coordinate to)
         {
             double deltaX = to.X - from.X;
             double deltaY = to.Y - from.Y;
             double deltaZ = to.Z - from.Z;
             return Math.Sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ);
         }
-    }
 
-    
+    }
 }

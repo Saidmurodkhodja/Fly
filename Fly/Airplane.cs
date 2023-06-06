@@ -14,14 +14,15 @@ namespace Fly
         public Airplane(Coordinate initialPosition)
         {
             CurrentPosition = initialPosition;
-            currentSpeed = 200; // Initial speed of 200 km/h
+            currentSpeed = 200; // Initial speed of 200 km/h according to the task description
         }
 
         public void FlyTo(Coordinate newPosition)
         {
             double distance = CalculateDistance(CurrentPosition, newPosition);
 
-            // Check if airplane can reach the destination, the airplane can not go faster than 1020 km/h
+            // The airplane can not go faster than 1020 km/h according to google
+                  
             if (distance > (1020 - currentSpeed) * 10)
             {
                 Console.WriteLine("The airplane cannot reach that destination.");
@@ -49,7 +50,7 @@ namespace Fly
             }
 
             Console.WriteLine($"Flying to new position of an airplane: {newPosition.X}, {newPosition.Y}, {newPosition.Z}");
-            Console.WriteLine($"Estimated fly time: {Math.Round(flyTime, 2)} hours");
+            Console.WriteLine($"Estimated fly time of an airplane: {Math.Round(flyTime, 2)} hours");
             CurrentPosition = newPosition;
         }
 

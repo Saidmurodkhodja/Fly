@@ -32,7 +32,7 @@ namespace Fly
 
             double flyTime = distance / maxSpeed;
             Console.WriteLine($"Flying to new position of a bird: {newPosition.X}, {newPosition.Y}, {newPosition.Z}");
-            Console.WriteLine($"Estimated fly time: {Math.Round(flyTime, 2)} hours"); // rounds up results to 2 decimals
+            Console.WriteLine($"Estimated fly time of a bird: {Math.Round(flyTime, 2)} hours"); // rounds up results to 2 decimals
             CurrentPosition = newPosition;
         }
 
