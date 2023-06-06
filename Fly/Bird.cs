@@ -17,7 +17,7 @@ namespace Fly
             CurrentPosition = initialPosition;
             this.maxDistance = maxDistance;
             Random random = new Random();
-            maxSpeed = random.Next(0, 21); // Random speed between 0 and 20 km/h
+            maxSpeed = random.Next(1, 21); // Random speed between 1 and 20 km/h
         }
 
         public void FlyTo(Coordinate newPosition)
